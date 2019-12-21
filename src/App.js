@@ -1,10 +1,28 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Layout from "./layout/layout";
+import { Routes } from "./routes/routes";
+import NotFound from "./page/NotFound/NotFound";
+import "./App.css";
 
 function App() {
-  return <Layout></Layout>;
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          {Routes.map(route => (
+            <Route
+              key={route.path}
+              exact={route.exact}
+              path={route.path}
+              component={route.component}
+            />
+          ))}
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
+  );
 }
 
 export default App;

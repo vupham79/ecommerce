@@ -1,12 +1,19 @@
 import React, { Component } from "react";
-import { Grid, InputAdornment, TextField, withStyles } from "@material-ui/core";
+import {
+  Grid,
+  InputAdornment,
+  Toolbar,
+  Button,
+  TextField,
+  withStyles,
+  Container
+} from "@material-ui/core";
+import Link from "./link";
+import { StyledTypography } from "./styledComponents";
 import { Search } from "@material-ui/icons";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { sections, title } from "../constant/layout";
+import { sections, title } from "../constant/constant";
 import styles from "./index.module.css";
+import PersonIcon from "@material-ui/icons/Person";
 
 const CssTextField = withStyles({
   root: {
@@ -22,58 +29,55 @@ const CssTextField = withStyles({
 export default class Header extends Component {
   render() {
     return (
-      <div className={styles.header}>
+      <>
         <Toolbar className={styles.toolbar}>
-          <Grid container justify={"space-between"}>
-            <Grid item container lg={6} xs={10} spacing={4}>
-              <Grid item>
-                <Typography
-                  className={styles.V1}
-                  variant="h5"
-                  color="inherit"
-                  align="center"
-                  noWrap
-                >
-                  {title}
-                </Typography>
+          <Container>
+            <Grid container justify={"space-between"}>
+              <Grid item container lg={6} xs={12} spacing={4}>
+                <Grid item>
+                  <StyledTypography
+                    variant="h3"
+                    color="inherit"
+                    align="center"
+                    noWrap
+                  >
+                    {title}
+                  </StyledTypography>
+                </Grid>
+                <Grid item className={styles.flex_center}>
+                  <CssTextField
+                    placeholder="Tìm kiếm..."
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Search />
+                        </InputAdornment>
+                      )
+                    }}
+                  />
+                </Grid>
               </Grid>
-              <Grid item>
-                <CssTextField
-                  placeholder="Search..."
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Search />
-                      </InputAdornment>
-                    )
-                  }}
-                />
+              <Grid item className={styles.flex_center}>
+                <Button variant="outlined">
+                  <PersonIcon />
+                  Đăng nhập
+                </Button>
               </Grid>
             </Grid>
-            <Grid item>
-              <Button variant="outlined" size="small">
-                Sign up
-              </Button>
+          </Container>
+        </Toolbar>
+        <Toolbar className={styles.toolbar} component="nav" variant="dense">
+          <Container>
+            <Grid container justify="center" spacing={2}>
+              {sections.map(section => (
+                <Grid item key={section.title}>
+                  <Link to={section.url}>{section.title}</Link>
+                </Grid>
+              ))}
             </Grid>
-          </Grid>
+          </Container>
         </Toolbar>
-        <Toolbar component="nav" variant="dense">
-          <Grid container justify="center" spacing={4}>
-            {sections.map(section => (
-              <Grid item key={section.title}>
-                <Link
-                  color="inherit"
-                  noWrap
-                  key={section.title}
-                  href={section.url}
-                >
-                  {section.title}
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
-        </Toolbar>
-      </div>
+      </>
     );
   }
 }

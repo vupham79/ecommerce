@@ -1,0 +1,18 @@
+.leftNav {
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.rightNav {
+  padding: 1.5rem;
+}
+
+.detail__title {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.detail__data {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}

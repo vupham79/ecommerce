@@ -1,40 +1,40 @@
 import React, { Component } from "react";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import { description, title } from "../constant/layout";
+import { Link } from "@material-ui/core";
+import { description, title } from "../constant/constant";
 import styles from "./index.module.css";
+import { StyledTypography } from "./styledComponents";
+
 function Copyright() {
   return (
-    <Typography
+    <StyledTypography
       className={styles.V1}
       variant="body2"
       color="textSecondary"
       align="center"
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        {title}
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </StyledTypography>
   );
 }
 
 export default class footer extends Component {
   render() {
     return (
-      <Container maxWidth="lg">
-        <Typography
+      <div className={styles.footer_container}>
+        <StyledTypography
           className={styles.V1}
           variant="h5"
           align="center"
           gutterBottom
         >
           {title}
-        </Typography>
-        <Typography
+        </StyledTypography>
+        <StyledTypography
           className={styles.V1}
           variant="subtitle1"
           align="center"
@@ -42,9 +42,9 @@ export default class footer extends Component {
           component="p"
         >
           {description}
-        </Typography>
+        </StyledTypography>
         <Copyright />
-      </Container>
+      </div>
     );
   }
 }
