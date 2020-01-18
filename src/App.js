@@ -1,6 +1,8 @@
 import React from "react";
 import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Layout from "./layout/layout";
+import { Routes } from "./routes/routes";
 import "./App.css";
 
 class App extends React.Component {
