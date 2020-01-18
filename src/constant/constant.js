@@ -1,4 +1,4 @@
-export const title = "Nàng Store";
+export const title = "retro";
 export const sections = [
   {
     title: "Trang chủ",
@@ -9,16 +9,8 @@ export const sections = [
     url: "/products"
   },
   {
-    title: "Về chúng tôi",
+    title: "Giới thiệu",
     url: "/about"
-  },
-  {
-    title: "Sứ mệnh",
-    url: "/gifts"
-  },
-  {
-    title: "Thương hiệu",
-    url: "/brands"
   }
 ];
 export const description = "Đang triển khai website";
@@ -73,3 +65,4 @@ export const detail_images = [
       "https://dsw.scene7.com/is/image/DSWShoes/478117_710_ss_05?$pdp-image$"
   }
 ];
+export const api_url = "http://127.0.0.1:8000";

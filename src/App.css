@@ -3,6 +3,11 @@
   src: url(./asset/font/Lora-Regular.ttf);
 }
 
+@font-face {
+  font-family: V2;
+  src: url(./asset/font/Lora-Bold.ttf);
+}
+
 body {
   font-family: V1 !important;
   font-size: 1rem;
@@ -23,4 +28,25 @@ body {
 
 .MuiTypography-root {
   font-family: V1, Helvetica, Arial, sans-serif !important;
+}
+
+.MuiMenuItem-root {
+  font-family: V1, Helvetica, Arial, sans-serif !important;
+}
+
+.backdrop {
+  z-index: 99999 !important;
+  color: white;
+}
+
+.image-gallery-thumbnail.active {
+  border-color: black;
+}
+
+.image-gallery-right-nav :hover {
+  color: "black !important";
+}
+
+.image-gallery-left-nav :hover {
+  color: "black !important";
 }

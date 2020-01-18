@@ -1,28 +1,30 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Layout from "./layout/layout";
-import { Routes } from "./routes/routes";
-import NotFound from "./page/NotFound/NotFound";
+import NotFound from "./pages/NotFound/NotFound";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Layout>
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
         <Switch>
-          {Routes.map(route => (
-            <Route
-              key={route.path}
-              exact={route.exact}
-              path={route.path}
-              component={route.component}
-            />
-          ))}
-          <Route path="*" component={NotFound} />
+          <Layout>
+            <Switch>
+              {Routes.map(route => (
+                <Route
+                  key={route.path}
+                  exact={route.exact}
+                  path={route.path}
+                  component={route.component}
+                />
+              ))}
+              <Route component={NotFound} />
+            </Switch>
+          </Layout>
         </Switch>
-      </Layout>
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

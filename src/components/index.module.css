@@ -1,0 +1,111 @@
+.toolbar {
+  border-bottom: 1px solid black;
+  position: sticky;
+  padding: 0.5rem;
+}
+
+.V1 {
+  font-family: V1 !important;
+}
+
+.filter__title {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-weight: 700 !important;
+  text-overflow: ellipsis;
+  padding-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "V1";
+}
+
+.product__brand {
+  text-overflow: ellipsis;
+  padding-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product__price {
+  font-weight: 700 !important;
+  padding-bottom: 0.14286rem;
+}
+
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkBtn {
+  text-decoration: underline;
+  cursor: pointer;
+  text-transform: none !important;
+}
+
+.result_list {
+  border: 1px solid red;
+}
+
+.footer_container {
+  border-top: 1px solid black;
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.filter__group {
+  border-top: 1px solid #ccc !important;
+}
+
+.filter__groups {
+  margin-top: 1.5rem !important;
+}
+
+.filter__group_title {
+  font-weight: 700 !important;
+  text-overflow: ellipsis;
+  padding-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "V1";
+}
+
+.cart__item {
+  border-top: 1px solid lightgray;
+  padding: 1rem;
+}
+
+.cart__item .title {
+  font-weight: 700 !important;
+}
+
+.summary {
+  background-color: whitesmoke;
+  border: 1px solid;
+  padding: 0 20px 30px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+}
+
+.detail__title {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.detail__data {
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
